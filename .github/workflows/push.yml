@@ -16,7 +16,7 @@ jobs:
         component:
           - name: qubership-apihub-nodejs-dev-image
             file: Dockerfile
-            context: ./development-environment
+            context: './development-environment'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
