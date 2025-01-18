@@ -8,7 +8,7 @@ on:
 
 jobs:
   call-docker-ci-workflow:
-    uses: netcracker/qubership-apihub-ci/.github/workflows/docker-ci.yaml@docker-workflow
+    uses: netcracker/qubership-apihub-ci/.github/workflows/docker-ci.yml@docker-workflow
     with:
       name: qubership-apihub-nodejs-dev-image
       file: development-environment/Dockerfile
