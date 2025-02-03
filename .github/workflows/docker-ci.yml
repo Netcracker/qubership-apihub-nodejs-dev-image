@@ -1,0 +1,16 @@
+name: Docker CI Workflow
+on:
+  release:
+    types: [created]
+  push:
+    branches:
+      - '**'
+
+jobs:
+  call-docker-ci-workflow:
+    uses: netcracker/qubership-apihub-ci/.github/workflows/docker-ci.yml@main
+    with:
+      name: qubership-apihub-nodejs-dev-image
+      file: development-environment/Dockerfile
+      context: 'development-environment'
+      platforms: linux/amd64
