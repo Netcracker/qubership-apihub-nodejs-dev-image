@@ -3,7 +3,7 @@ FROM docker.io/centos:centos8.4.2105
 ENV NODE_VERSION=20.11.1
 ENV NPM_VERSION=10.2.4
 ENV YARN_VERSION=1.22.21
-ENV CHROME_VERSION=131.0.6778.204
+ENV CHROME_VERSION=125.0.6422.141
 ENV PUPPETEER_VERSION=21.11.0
 
 ADD scripts ${SCRIPTS_DIR}
@@ -30,7 +30,8 @@ RUN dnf clean all && \
       zip \
       curl \
       hostname iputils iproute sysstat procps-ng \
-      gcc-c++ && \
+      gcc-c++ \
+      jq && \
     dnf clean all && \
     rm -rf /var/cache/dnf
   

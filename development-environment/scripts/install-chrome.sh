@@ -16,7 +16,7 @@ echo "**** CHROME ****"
 
 yum install -y mesa-libGL
 
-wget -r -l1 --no-parent -A "google-chrome-stable_current_x86_64.rpm" https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
-yum --disableplugin=fastestmirror -y -v install dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
+wget -r -l1 --no-parent -A "google-chrome-stable-125.0.6422.141-1.x86_64.rpm" https://dl.google.com/linux/chrome/rpm/stable/x86_64/google-chrome-stable-125.0.6422.141-1.x86_64.rpm
+yum --disableplugin=fastestmirror -y -v install dl.google.com/linux/chrome/rpm/stable/x86_64/google-chrome-stable-125.0.6422.141-1.x86_64.rpm
 
 google-chrome-stable --version
