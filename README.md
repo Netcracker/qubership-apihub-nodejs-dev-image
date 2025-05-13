@@ -58,7 +58,7 @@ This image is used in CI/CD pipelines for building and testing frontend applicat
 
 ## Building the Image
 
-You can also build the image locally, without using the image from the registry, by executing the commands below:
+You can  build the image locally by executing the commands below:
 
 ```bash
 cd development-environment
