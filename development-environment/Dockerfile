@@ -5,6 +5,7 @@ ENV NPM_VERSION=10.2.4
 ENV YARN_VERSION=1.22.21
 ENV CHROME_VERSION=125.0.6422.141
 ENV PUPPETEER_VERSION=21.11.0
+ENV LERNA_VERSION=8.2.2
 
 ADD scripts ${SCRIPTS_DIR}
 
@@ -57,6 +58,10 @@ LABEL soft.yarn="$YARN_VERSION"
 RUN sh -e ${SCRIPTS_DIR}/install-chrome.sh
 
 LABEL soft.chrome="$CHROME_VERSION"
+
+RUN sh -e ${SCRIPTS_DIR}/install-lerna.sh
+
+LABEL soft.lerna="$LERNA_VERSION"
 
 ENV PUPPETEER_SKIP_DOWNLOAD=true
 RUN npm i -g puppeteer@${PUPPETEER_VERSION} --unsafe-perm=true

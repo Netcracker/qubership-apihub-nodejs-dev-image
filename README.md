@@ -17,6 +17,7 @@ This Docker image provides a development environment primarily designed for scre
 |---------------|----------------|
 | Node          | 20.11.1        |
 | NPM           | 10.2.4         |
+| Lerna         | 8.2.2          |
 | Yarn          | 1.22.21        |
 | Chrome        | 125.0.6422.141 |
 | Puppeteer     | 21.11.0        |
