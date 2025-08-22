@@ -7,7 +7,7 @@ ENV CHROME_VERSION=125.0.6422.141
 ENV PUPPETEER_VERSION=21.11.0
 ENV LERNA_VERSION=8.2.2
 
-ADD scripts ${SCRIPTS_DIR}
+COPY scripts ${SCRIPTS_DIR}
 
 RUN  sed -i s/mirror.centos.org/vault.centos.org/g /etc/yum.repos.d/CentOS-*.repo
 RUN  sed -i s/^#.*baseurl=http/baseurl=http/g /etc/yum.repos.d/CentOS-*.repo
@@ -69,3 +69,5 @@ ENV PUPPETEER_EXECUTABLE_PATH="/usr/bin/google-chrome-stable"
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 
 LABEL soft.puppeteer="$PUPPETEER_VERSION"
+
+USER root
