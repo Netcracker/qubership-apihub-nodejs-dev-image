@@ -13,7 +13,7 @@ on:
 jobs:
   call-docker-ci-workflow:
     if: github.event_name == 'push'
-    uses: netcracker/qubership-apihub-ci/.github/workflows/docker-ci.yml@main
+    uses: netcracker/qubership-apihub-ci/.github/workflows/docker-ci.yml@feature/nodejs24
     with:
       name: qubership-apihub-nodejs-dev-image
       file: development-environment/Dockerfile
