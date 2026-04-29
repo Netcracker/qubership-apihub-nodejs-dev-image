@@ -33,6 +33,8 @@ RUN dnf clean all && \
       hostname iputils iproute sysstat procps-ng \
       gcc-c++ \
       jq \
+      # socat: used by jest-chrome-in-docker-environment to proxy 0.0.0.0:9222 -> 127.0.0.1:9223
+      # because Chrome 113+ ignores --remote-debugging-address=0.0.0.0 in headless mode
       socat && \
     dnf clean all && \
     rm -rf /var/cache/dnf
