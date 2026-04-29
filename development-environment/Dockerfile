@@ -32,7 +32,8 @@ RUN dnf clean all && \
       curl \
       hostname iputils iproute sysstat procps-ng \
       gcc-c++ \
-      jq && \
+      jq \
+      socat && \
     dnf clean all && \
     rm -rf /var/cache/dnf
   
