@@ -69,7 +69,6 @@ LABEL soft.lerna="$LERNA_VERSION"
 ENV PUPPETEER_SKIP_DOWNLOAD=true
 RUN npm i -g puppeteer@${PUPPETEER_VERSION} --unsafe-perm=true
 ENV PUPPETEER_EXECUTABLE_PATH="/usr/bin/google-chrome-stable"
-ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 
 LABEL soft.puppeteer="$PUPPETEER_VERSION"
 

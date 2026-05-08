@@ -18,5 +18,6 @@ yum install -y mesa-libGL
 
 wget https://dl.google.com/linux/chrome/rpm/stable/x86_64/google-chrome-stable-${CHROME_VERSION}-1.x86_64.rpm
 yum --disableplugin=fastestmirror -y -v install google-chrome-stable-${CHROME_VERSION}-1.x86_64.rpm
+rm -f google-chrome-stable-${CHROME_VERSION}-1.x86_64.rpm
 
 google-chrome-stable --version
