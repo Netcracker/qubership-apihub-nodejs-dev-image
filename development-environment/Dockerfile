@@ -1,4 +1,4 @@
-FROM docker.io/centos:centos8.4.2105 
+FROM docker.io/centos:centos8.4.2105
 
 ENV NODE_VERSION=24.15.0
 ENV NPM_VERSION=11.12.1
@@ -9,10 +9,11 @@ ENV LERNA_VERSION=8.2.2
 
 COPY scripts ${SCRIPTS_DIR}
 
-RUN  sed -i s/mirror.centos.org/vault.centos.org/g /etc/yum.repos.d/CentOS-*.repo
-RUN  sed -i s/^#.*baseurl=http/baseurl=http/g /etc/yum.repos.d/CentOS-*.repo
-RUN  sed -i s/^mirrorlist=http/#mirrorlist=http/g /etc/yum.repos.d/CentOS-*.repo
+RUN sed -i s/mirror.centos.org/vault.centos.org/g /etc/yum.repos.d/CentOS-*.repo && \
+    sed -i s/^#.*baseurl=http/baseurl=http/g /etc/yum.repos.d/CentOS-*.repo && \
+    sed -i s/^mirrorlist=http/#mirrorlist=http/g /etc/yum.repos.d/CentOS-*.repo
 
+# hadolint ignore=DL3041
 RUN dnf clean all && \
     dnf install -y glibc-locale-source && \
     localedef -c -f UTF-8 -i en_US en_US.UTF-8 && \
@@ -38,7 +39,6 @@ RUN dnf clean all && \
       socat && \
     dnf clean all && \
     rm -rf /var/cache/dnf
-  
 
 ENV INSTALL_ROOT=/usr/local
 ENV NODE_HOME=${INSTALL_ROOT}/node-v${NODE_VERSION}
@@ -46,30 +46,31 @@ ENV NODE_PATH=${NODE_HOME}/lib/node_modules
 ENV PATH=${NODE_HOME}/bin:${PATH}
 ENV NODE_OPTIONS="--max-old-space-size=4096"
 
-RUN sh -e ${SCRIPTS_DIR}/install-node.sh
+RUN sh -e "${SCRIPTS_DIR}/install-node.sh"
 
 LABEL soft.node="$NODE_VERSION"
 
-RUN sh -e ${SCRIPTS_DIR}/install-npm.sh
+RUN sh -e "${SCRIPTS_DIR}/install-npm.sh"
 
 LABEL soft.npm="$NPM_VERSION"
 
-RUN sh -e ${SCRIPTS_DIR}/install-yarn.sh
+RUN sh -e "${SCRIPTS_DIR}/install-yarn.sh"
 
 LABEL soft.yarn="$YARN_VERSION"
 
-RUN sh -e ${SCRIPTS_DIR}/install-chrome.sh
+RUN sh -e "${SCRIPTS_DIR}/install-chrome.sh"
 
 LABEL soft.chrome="$CHROME_VERSION"
 
-RUN sh -e ${SCRIPTS_DIR}/install-lerna.sh
+RUN sh -e "${SCRIPTS_DIR}/install-lerna.sh"
 
 LABEL soft.lerna="$LERNA_VERSION"
 
 ENV PUPPETEER_SKIP_DOWNLOAD=true
-RUN npm i -g puppeteer@${PUPPETEER_VERSION} --unsafe-perm=true
+RUN npm i -g puppeteer@"${PUPPETEER_VERSION}" --unsafe-perm=true
 ENV PUPPETEER_EXECUTABLE_PATH="/usr/bin/google-chrome-stable"
 
 LABEL soft.puppeteer="$PUPPETEER_VERSION"
 
+# hadolint ignore=DL3002
 USER root
