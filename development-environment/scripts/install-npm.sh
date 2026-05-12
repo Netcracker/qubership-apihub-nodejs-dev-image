@@ -14,4 +14,4 @@
 # limitations under the License.
 
 echo "**** NPM ****"
-npm install -g npm@${NPM_VERSION}
+npm install -g npm@"${NPM_VERSION}"

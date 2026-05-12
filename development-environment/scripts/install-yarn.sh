@@ -14,4 +14,4 @@
 # limitations under the License.
 
 echo "**** YARN ****"
-npm install -g yarn@${YARN_VERSION}
+npm install -g yarn@"${YARN_VERSION}"
