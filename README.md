@@ -15,12 +15,12 @@ This Docker image provides a development environment primarily designed for scre
 
 | Software name | Version        |
 |---------------|----------------|
-| Node          | 20.11.1        |
-| NPM           | 10.2.4         |
-| Lerna         | 8.2.2          |
+| Node          | 24.15.0        |
+| NPM           | 11.12.1        |
+| Lerna         | 9.0.7          |
 | Yarn          | 1.22.21        |
-| Chrome        | 125.0.6422.141 |
-| Puppeteer     | 21.11.0        |
+| Chrome        | 147.0.7727.101 |
+| Puppeteer     | 24.42.0        |
 
 ## Screenshot Testing
 
