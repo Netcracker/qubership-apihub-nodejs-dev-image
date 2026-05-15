@@ -1,3 +1,4 @@
+#!/bin/bash
 # Copyright 2024-2025 NetCracker Technology Corporation
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,4 +14,4 @@
 # limitations under the License.
 
 echo "**** NPM ****"
-npm install -g npm@${NPM_VERSION}
+npm install -g npm@"${NPM_VERSION}"
